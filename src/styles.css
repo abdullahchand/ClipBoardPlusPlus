@@ -1,0 +1,88 @@
+body {
+    background-color: #000; /* Full black background */
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333; /* Lighter grey for the header */
+    padding: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.search {
+    background-color: #444; /* Lighter grey for search bar */
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+}
+
+#clipboardEntries {
+    margin-top: 20px; /* Adds space between the search bar and clipboard entries */
+}
+
+.entry {
+    display: flex; /* Flexbox to align content */
+    flex-direction: column; /* Stack text and time vertically */
+    padding: 10px;
+    margin-bottom: 5px;
+    position: relative; /* For positioning the action buttons */
+    background-color: #222; /* Lighter grey background for each clipboard entry */
+}
+
+.entry-text {
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowed text */
+    text-overflow: ellipsis; /* Add "..." if text overflows */
+    margin-bottom: 5px; /* Space between text and time */
+    flex-grow: 1; /* Allow text to grow and take up available space */
+    flex-shrink: 0; /* Prevent text from shrinking */
+}
+
+.entry-time {
+    font-size: 0.8em;
+    color: purple; /* Color the timestamp purple */
+    margin-bottom: 5px; /* Space between time and actions */
+}
+
+.entry-actions {
+    position: absolute; /* Position actions on the far right */
+    right: 10px; /* Distance from the right edge */
+    top: 50%; /* Center actions vertically */
+    transform: translateY(-50%); /* Fine-tune vertical alignment */
+    display: flex;
+    justify-content: space-around;
+    width: 80px; /* Adjust width as necessary */
+}
+
+.entry-actions span {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.separator {
+    height: 1px;
+    background-color: #666; /* Light grey separator */
+    margin-bottom: 20px;
+}
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* makes the image circular */
+  object-fit: cover;
+}
