@@ -2,6 +2,7 @@ mod clipboard_functions;
 mod tray;
 mod controller;
 mod fileio;
+mod utils;
 use tauri::{AppHandle, Emitter, Manager};
 
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/

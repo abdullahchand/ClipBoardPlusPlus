@@ -604,14 +604,18 @@ version = "0.1.0"
 dependencies = [
  "actix-web",
  "arboard",
+ "base64 0.22.1",
  "chrono",
  "dirs-next",
  "dotenv",
+ "keyring",
  "oauth2",
  "once_cell",
+ "rand 0.8.5",
  "reqwest 0.12.9",
  "serde",
  "serde_json",
+ "sys-info",
  "tauri",
  "tauri-build",
  "tauri-plugin-positioner",
@@ -2226,6 +2230,15 @@ dependencies = [
  "bitflags 2.6.0",
  "serde",
  "unicode-segmentation",
+]
+
+[[package]]
+name = "keyring"
+version = "3.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2f8fe839464d4e4b37d756d7e910063696af79a7e877282cb1825e4ec5f10833"
+dependencies = [
+ "log",
 ]
 
 [[package]]
@@ -4074,6 +4087,16 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.87",
+]
+
+[[package]]
+name = "sys-info"
+version = "0.9.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0b3a0d0aba8bf96a0e1ddfdc352fc53b3df7f39318c71854910c3c4b024ae52c"
+dependencies = [
+ "cc",
+ "libc",
 ]
 
 [[package]]

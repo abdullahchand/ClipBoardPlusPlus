@@ -166,5 +166,4 @@ function updateEntryTime(entryDiv) {
 
 // Set an interval to update clipboard content every half second
 setInterval(fetchClipboardContent, 500);
-// setInterval(get_user_profile, 5000);
 document.getElementById('login_button').addEventListener('click', login);

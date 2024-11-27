@@ -23,6 +23,13 @@ pub struct GoogleUser {
     picture: String,
 }
 
+#[derive(Deserialize, Clone, Debug)]
+struct Tokens {
+    id_token: String,
+    access_token: String,
+    refresh_token: String
+}
+
 static LOGGED_USER: Lazy<Mutex<Option<GoogleUser>>> = Lazy::new(|| Mutex::new(None));
 
 
@@ -105,6 +112,21 @@ async fn callback(req: HttpRequest) -> impl Responder {
         return HttpResponse::InternalServerError().body("Failed to fetch user information.");
     }
     let body = response.text().await.unwrap();
+    let client_2 = reqwest::Client::new();
+    let response = client_2
+        .post("https://ziyydwpehk.execute-api.us-east-1.amazonaws.com/dev/setup_user")
+        .json(&serde_json::json!({ "google_token":  access_token}))
+        .send()
+        .await;
+    match response {
+        Ok(val) => {
+            let results: Tokens = val.json().await.unwrap();
+
+        },
+        Err(val) => println!("Error occured {:?}", val)
+    }
+
+
 
     // If you still need to parse it:
     let user_data: GoogleUser = serde_json::from_str(&body).unwrap();
